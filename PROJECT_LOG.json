@@ -33,6 +33,10 @@
     {
       "at": "2026-03-29T10:30:00.000Z",
       "summary": "HeroVideoPlayer: single overview MP4 only — removed poster (no photo flash), playlist/arrows/counter/keyboard carousel."
+    },
+    {
+      "at": "2026-03-29T12:00:00.000Z",
+      "summary": "Hero video source: public/branding/Mas_Tech _Solution_01.mp4 (URL-encoded path in HeroVideoPlayer)."
     }
   ]
 }

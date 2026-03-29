@@ -2,7 +2,8 @@
  * Single hero clip — no poster (avoids a static photo flash before the first frame),
  * no carousel UI.
  */
-const HERO_VIDEO_SRC = "/branding/mas-tech-overview-hero.mp4";
+const HERO_VIDEO_FILE = "Mas_Tech _Solution_01.mp4";
+const HERO_VIDEO_SRC = `/branding/${encodeURIComponent(HERO_VIDEO_FILE)}`;
 
 export default function HeroVideoPlayer() {
   return (
