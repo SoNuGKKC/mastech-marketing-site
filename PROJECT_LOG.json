@@ -1,0 +1,30 @@
+{
+  "_readme": "MAS TECH corporate marketing site (MAS_TECH_SOLUTION / Netlify). Append entries when shipping UI. Do not mix with Paradise frontend/.",
+  "websiteDeployPending": true,
+  "entries": [
+    {
+      "at": "2026-03-20T18:00:00.000Z",
+      "summary": "Corporate site: hero video + deep metallic gold 'You ASK. We AUTOMATE.' (index.css); FounderNote duo (sonu_manthan.jpg / gurjar-sonu fallbacks + manthan-gurjar.jpeg), gold frame + Trishul watermark; Header larger gold-glow Trishul; Footer pill 'Powered by MAS TECH' + seal (canonicalLinks); FOUNDER_PHOTO.md duo paths."
+    },
+    {
+      "at": "2026-03-24T18:30:00.000Z",
+      "summary": "Stakeholder demo: Contact page stripped of dev/JSON/setup panels; enterprise blue + gold body gradient; hero prominent Trishul + MAS TECH Solution line; form/CTA transitions; optional VITE_PUBLIC_CONTACT_EMAIL."
+    },
+    {
+      "at": "2026-03-28T22:00:00.000Z",
+      "summary": "Monorepo merge: full Vite app from D: into MAS_TECH_SOLUTION/; removed full-bleed hero video loop; sticky header backdrop-blur 10px; HeroVideoPlayer 16:9 + HERO_PLAYLIST + arrows + keyboard; DEPLOYMENT.md Netlify base-directory checklist."
+    },
+    {
+      "at": "2026-03-29T02:30:00.000Z",
+      "summary": "Canonical workspace sync: Paradise_markcom_pvt_ltd/MAS_TECH_SOLUTION → D:/MAS TECH/MAS_TECH_SOLUTION via robocopy (excluded node_modules, dist, .netlify, .git, .env*); npm run build verified on outer path."
+    },
+    {
+      "at": "2026-03-29T04:15:00.000Z",
+      "summary": "Paradise monorepo: nested MAS_TECH_SOLUTION removed from git; this folder is sole marketing codebase; field-app mistakes log stays Paradise/docs/MISTAKES_LOG_MARKETING_SITE.md for agents."
+    },
+    {
+      "at": "2026-03-29T06:00:00.000Z",
+      "summary": "Auto-deploy prep: .github/workflows/deploy-netlify.yml (push main + workflow_dispatch), NETLIFY_AUTO_DEPLOY.md, git init ready; .gitignore ignores full .netlify/."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 80" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="masTrishulGold" x1="10" y1="2" x2="46" y2="78" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fff8e7"/>
+      <stop offset="0.32" stop-color="#e6c66a"/>
+      <stop offset="0.65" stop-color="#c9a227"/>
+      <stop offset="1" stop-color="#4a3d12"/>
+    </linearGradient>
+    <filter id="masTrishulGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.35" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <g
+    stroke="url(#masTrishulGold)"
+    stroke-width="2.85"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#masTrishulGlow)"
+  >
+    <path d="M28 74V30"/>
+    <path d="M28 30V9"/>
+    <path d="M28 22 11 7"/>
+    <path d="M28 22 45 7"/>
+    <path d="M18 34h20"/>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Elevated SaaS shell — tokens aligned with MAS TECH / Paradise orange engine (no app business logic) */
+:root {
+  --mas-bg: #040814;
+  --mas-primary: #ff8a2a;
+  --mas-accent: #38bdf8;
+  --mas-enterprise-blue: #0c4a6e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(1000px 560px at 8% -8%, rgba(56, 189, 248, 0.14) 0%, transparent 58%),
+    radial-gradient(820px 480px at 100% 0%, rgba(255, 138, 42, 0.12) 0%, transparent 52%),
+    radial-gradient(600px 400px at 50% 100%, rgba(12, 74, 110, 0.35) 0%, transparent 55%),
+    var(--mas-bg);
+  color: #f9fafb;
+}
+
+button,
+a[role="button"],
+input[type="submit"] {
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease,
+    filter 0.2s ease;
+}
+
+.glass-panel {
+  @apply rounded-2xl border border-white/10 bg-mas-card/80 backdrop-blur-md shadow-mas;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-mas-primary to-amber-200 bg-clip-text text-transparent;
+}
+
+/* Corporate home hero — deep metallic gold glow on tagline (MAS TECH marketing site only) */
+.mas-hero-tagline {
+  text-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.95),
+    0 2px 12px rgba(0, 0, 0, 0.85),
+    0 0 40px rgba(255, 215, 0, 0.35),
+    0 0 80px rgba(255, 180, 60, 0.2);
+}
+.mas-hero-ask {
+  background: linear-gradient(180deg, #fffef5 0%, #ffd700 42%, #daa520 72%, #8b6914 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.55)) drop-shadow(0 0 48px rgba(255, 200, 80, 0.3))
+    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.9));
+}
+.mas-hero-automate {
+  text-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.95),
+    0 2px 14px rgba(0, 0, 0, 0.9),
+    0 0 32px rgba(255, 255, 255, 0.12);
+}
+@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+  .mas-hero-ask {
+    color: #ffd700;
+    -webkit-text-fill-color: #ffd700;
+    filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.85));
+  }
+}

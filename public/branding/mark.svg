@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Paradise Markcom · MAS TECH brand mark">
+  <defs>
+    <linearGradient id="pmSun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb25a"/>
+      <stop offset="45%" stop-color="#ff8a2a"/>
+      <stop offset="100%" stop-color="#c2410c"/>
+    </linearGradient>
+    <linearGradient id="pmSky" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,184,255,0.35)"/>
+      <stop offset="100%" stop-color="rgba(0,184,255,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="72" height="72" rx="18" fill="url(#pmSun)"/>
+  <path d="M8 48 Q36 28 64 48" fill="none" stroke="rgba(5,7,11,0.2)" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="36" cy="46" rx="26" ry="8" fill="url(#pmSky)"/>
+  <!-- Horizon arc = paradise dawn -->
+  <path d="M10 26 Q36 10 62 26" fill="none" stroke="#05070b" stroke-width="3.2" stroke-linecap="round" opacity="0.92"/>
+  <circle cx="36" cy="24" r="5.5" fill="#05070b" opacity="0.92"/>
+  <!-- PM monogram — synced from Paradise_markcom frontend/assets/paradise-markcom-logo.svg -->
+  <text x="36" y="52" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-size="22" font-weight="900" fill="#05070b" letter-spacing="-2">PM</text>
+</svg>

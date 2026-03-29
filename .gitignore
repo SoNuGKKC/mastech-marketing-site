@@ -1,0 +1,10 @@
+# ——— V2.2 Website isolation — never commit secrets ———
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+*.local
+.DS_Store
+.vercel
+.netlify/
