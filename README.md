@@ -41,6 +41,7 @@ npm run build
 
 ## Brand assets
 
+- **Home hero videos:** `public/branding/mas-tech-solution-01.mp4` … **`mas-tech-solution-06.mp4`** — playlist in **`src/components/HeroVideoPlayer.tsx`**. Add missing files with the same pattern; **01** / **02** are copies of the previous hero clips until you replace them.
 - **`public/branding/mas-trishul-seal.svg`** — **founder seal** (gold Trishul) used in **`src/components/Header.tsx`** + favicon. **No PM mark** in the site header.
 - `public/branding/mark.svg` — legacy client PM asset; **not** used in the marketing header (see `MASTER_BRAIN.md` §0.5).
 - **Founder portrait:** `public/branding/sonu.jpeg` (see `public/branding/FOUNDER_PHOTO.md`). **GURJAR** surname uses **Playfair Display** + gold accent on Home & About.
