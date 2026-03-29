@@ -30,7 +30,7 @@ npm run build
 
 ## Auto-deploy (Netlify)
 
-See **`NETLIFY_AUTO_DEPLOY.md`**: push to **`main`** triggers GitHub Actions, or use **Actions → Run workflow** when you want a deploy without a code change. Alternative: link this repo in Netlify **Continuous deployment** (Netlify builds on their side).
+**Netlify linked to this GitHub repo** — `git push` to **`main`** triggers a single Netlify build (no GitHub Actions). Details: **`NETLIFY_AUTO_DEPLOY.md`**.
 
 ## Security (zero-leak)
 

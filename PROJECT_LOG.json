@@ -25,6 +25,10 @@
     {
       "at": "2026-03-29T06:00:00.000Z",
       "summary": "Auto-deploy prep: .github/workflows/deploy-netlify.yml (push main + workflow_dispatch), NETLIFY_AUTO_DEPLOY.md, git init ready; .gitignore ignores full .netlify/."
+    },
+    {
+      "at": "2026-03-29T08:00:00.000Z",
+      "summary": "Removed GitHub Actions Netlify workflow — single deploy path = Netlify Continuous deployment from Git (mastech-marketing-site main); NETLIFY_AUTO_DEPLOY.md + README updated."
     }
   ]
 }

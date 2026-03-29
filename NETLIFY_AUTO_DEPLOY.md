@@ -1,45 +1,25 @@
 # Netlify auto-deploy — MAS TECH marketing site
 
 Canonical folder: **`D:\MAS TECH\MAS_TECH_SOLUTION`**.  
-Live URL: [mastechsolution.netlify.app](https://mastechsolution.netlify.app/) (see `docs/CANONICAL_LINKS.md` in Paradise repo if you sync links).
+Live URL: [mastechsolution.netlify.app](https://mastechsolution.netlify.app/) (Paradise repo: `docs/CANONICAL_LINKS.md` for link sync).
 
 ---
 
-## Option A — Netlify “Link site to Git” (simplest)
+## Canonical flow — Netlify “Link site to Git” only
 
-No GitHub Actions secrets needed; Netlify builds on **their** servers.
+**GitHub Actions workflow is intentionally not used** (avoids double deploy with Netlify’s own Git builds).
 
-1. Push **this folder** as its **own** GitHub repository (root = `package.json` here, not monorepo).
-2. Netlify → **mastechsolution** → **Project configuration** → **Build & deploy** → **Continuous deployment** → **Link repository**.
-3. Pick the repo, branch **`main`**, leave **Base directory** empty, **Build command** `npm run build`, **Publish directory** `dist`.
-4. Add **Environment variables** on Netlify (`VITE_*` from old setup if any).
-5. Every **`git push origin main`** → new production deploy automatically.
+1. GitHub repo root = this folder (`package.json` at repo root).
+2. Netlify → **mastechsolution** → **Build & deploy** → **Continuous deployment** → repo **`SoNuGKKC/mastech-marketing-site`**, branch **`main`**.
+3. **Base directory** empty, **Build** `npm run build`, **Publish** `dist`.
+4. **Environment variables** on Netlify for any **`VITE_*`** you need.
+5. Every **`git push origin main`** → Netlify runs one production deploy.
 
----
-
-## Option B — GitHub Actions (this repo includes `.github/workflows/deploy-netlify.yml`)
-
-Use when you prefer build logs in GitHub or Netlify Git link is not used.
-
-### One-time secrets (GitHub → repo → **Settings** → **Secrets and variables** → **Actions**)
-
-| Secret | Where to get it |
-|--------|------------------|
-| `NETLIFY_AUTH_TOKEN` | Netlify → **User settings** → **Applications** → **Personal access tokens** → New token |
-| `NETLIFY_SITE_ID` | Netlify → **mastechsolution** → **Site configuration** → **General** → **Site details** → **Site ID** |
-
-### Triggers
-
-- **Automatic:** every push to **`main`**.
-- **Manual / “jab chaho”:** GitHub → **Actions** → **Deploy marketing site (Netlify)** → **Run workflow** (no extra question — you click when you want).
-
-### After first success
-
-Set `websiteDeployPending` to `false` in `PROJECT_LOG.json` when you confirm the live site.
+You do **not** need **`NETLIFY_AUTH_TOKEN`** / **`NETLIFY_SITE_ID`** in GitHub Secrets for this setup. If you added them earlier, you can delete those secrets from GitHub (optional cleanup).
 
 ---
 
-## Local quick deploy (backup)
+## Local quick deploy (backup / emergency)
 
 ```powershell
 cd "D:\MAS TECH\MAS_TECH_SOLUTION"
@@ -47,4 +27,4 @@ npm run build
 npx netlify-cli deploy --prod --dir=dist
 ```
 
-(`netlify login` and `netlify link` once on this PC if not using tokens.)
+(`netlify login` + `netlify link` once on this PC if using CLI.)
