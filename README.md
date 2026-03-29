@@ -32,6 +32,12 @@ npm run build
 
 **Netlify linked to this GitHub repo** — `git push` to **`main`** triggers a single Netlify build (no GitHub Actions). Details: **`NETLIFY_AUTO_DEPLOY.md`**.
 
+## Feedback Mic + Evolution (₹1,000Cr loop)
+
+- **Floating mic FAB** (all pages): screen + voice capture → Supabase Storage `feedback_vault` + table `feedback_logs` (Edge Functions in **Paradise** `supabase/`).
+- **Gatekeeper:** `/evolution` — Sonu Bhai token (`FEEDBACK_ADMIN_GATE_TOKEN`) se queue + **APPROVE & MERGE** (DB flag; Git/deploy manual controlled step).
+- **Env:** `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` (+ deploy functions per `Paradise_markcom_pvt_ltd/supabase/README.md` §6).
+
 ## Security (zero-leak)
 
 - No Google Sheet IDs or API keys in this codebase.

@@ -45,6 +45,10 @@
     {
       "at": "2026-03-29T15:30:00.000Z",
       "summary": "HeroVideoPlayer: removed counter/arrow-key hint UI; video not muted by default (browser may still block autoplay-with-sound until user gesture)."
+    },
+    {
+      "at": "2026-03-29T18:00:00.000Z",
+      "summary": "Interactive Feedback Engine v1: FAB + screen/mic MediaRecorder, signed upload to feedback_vault, feedback_logs via Edge; /evolution gatekeeper; CSP+Permissions-Policy fix for mic/display-capture + *.supabase.co; Supabase migrations/functions in Paradise repo."
     }
   ]
 }

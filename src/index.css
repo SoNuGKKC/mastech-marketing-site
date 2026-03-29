@@ -75,3 +75,19 @@ input[type="submit"] {
     filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.85));
   }
 }
+
+@keyframes feedback-pulse-shell {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 40px rgba(239, 68, 68, 0.35);
+  }
+  50% {
+    transform: scale(1.012);
+    box-shadow: 0 0 56px rgba(239, 68, 68, 0.55);
+  }
+}
+
+.feedback-pulse-shell {
+  animation: feedback-pulse-shell 1.8s ease-in-out infinite;
+}
