@@ -103,7 +103,6 @@ export default function HeroVideoPlayer() {
             controls
             playsInline
             preload="auto"
-            muted
             autoPlay
             onEnded={onEnded}
             onLoadedData={onLoadedData}
@@ -124,10 +123,6 @@ export default function HeroVideoPlayer() {
           </svg>
         </button>
       </div>
-      <p className="mt-3 text-center text-sm text-mas-muted" aria-live="polite">
-        {index + 1} / {len}
-        <span className="mt-1 block text-xs text-mas-muted/80">Arrow keys ← →</span>
-      </p>
     </div>
   );
 }
