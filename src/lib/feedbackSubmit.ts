@@ -1,6 +1,8 @@
 import { feedbackAnonKey, feedbackFunctionsBase } from "./feedbackConfig";
 
 const MAX_BYTES = 50 * 1024 * 1024;
+/** Self-healing engine: max recording length (Sonu Bhai spec). */
+export const MAX_FEEDBACK_DURATION_MS = 180_000;
 
 function headers(): HeadersInit {
   const anon = feedbackAnonKey();
@@ -43,6 +45,13 @@ export async function signAndUploadRecording(blob: Blob, contentType: string): P
   return signJson.path;
 }
 
+function adminHeaders(adminToken: string): HeadersInit {
+  return {
+    ...headers(),
+    "x-feedback-admin-token": adminToken.trim(),
+  };
+}
+
 export async function registerFeedbackLog(payload: {
   storage_path: string;
   duration_ms: number;
@@ -50,6 +59,9 @@ export async function registerFeedbackLog(payload: {
   mime_type: string;
   client_meta?: Record<string, unknown>;
 }): Promise<string> {
+  if (payload.duration_ms > MAX_FEEDBACK_DURATION_MS) {
+    throw new Error("RECORDING_TOO_LONG");
+  }
   const base = feedbackFunctionsBase();
   const res = await fetch(`${base}/feedback-log-register`, {
     method: "POST",
@@ -68,4 +80,47 @@ export async function triggerEvolutionAnalyze(id: string): Promise<void> {
     headers: headers(),
     body: JSON.stringify({ id }),
   }).catch(() => {});
+}
+
+export async function requestFeedbackWatchUrl(id: string, adminToken: string): Promise<string> {
+  const base = feedbackFunctionsBase();
+  const res = await fetch(`${base}/feedback-watch-sign`, {
+    method: "POST",
+    headers: adminHeaders(adminToken),
+    body: JSON.stringify({ id }),
+  });
+  const j = (await res.json()) as { error?: string; signedUrl?: string };
+  if (!res.ok || !j.signedUrl) throw new Error(j.error || "WATCH_SIGN_FAILED");
+  return j.signedUrl;
+}
+
+export async function adminApproveFeedback(
+  id: string,
+  adminToken: string,
+  opts?: { hint?: string; learned_summary?: string }
+): Promise<{ github_dispatch: boolean }> {
+  const base = feedbackFunctionsBase();
+  const res = await fetch(`${base}/feedback-admin-approve`, {
+    method: "POST",
+    headers: adminHeaders(adminToken),
+    body: JSON.stringify({
+      id,
+      hint: opts?.hint,
+      learned_summary: opts?.learned_summary,
+    }),
+  });
+  const j = (await res.json()) as { error?: string; github_dispatch?: boolean };
+  if (!res.ok) throw new Error(j.error || "APPROVE_FAILED");
+  return { github_dispatch: Boolean(j.github_dispatch) };
+}
+
+export async function adminDenyFeedback(id: string, adminToken: string, reason: string): Promise<void> {
+  const base = feedbackFunctionsBase();
+  const res = await fetch(`${base}/feedback-admin-deny`, {
+    method: "POST",
+    headers: adminHeaders(adminToken),
+    body: JSON.stringify({ id, reason }),
+  });
+  const j = (await res.json()) as { error?: string };
+  if (!res.ok) throw new Error(j.error || "DENY_FAILED");
 }

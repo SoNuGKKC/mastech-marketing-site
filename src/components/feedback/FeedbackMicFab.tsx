@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { feedbackEngineConfigured } from "../../lib/feedbackConfig";
-import { registerFeedbackLog, signAndUploadRecording, triggerEvolutionAnalyze } from "../../lib/feedbackSubmit";
+import {
+  MAX_FEEDBACK_DURATION_MS,
+  registerFeedbackLog,
+  signAndUploadRecording,
+  triggerEvolutionAnalyze,
+} from "../../lib/feedbackSubmit";
 import {
   buildScreenWithVoiceStream,
   pickRecorderMime,
@@ -20,6 +25,8 @@ function humanErr(code: string): string {
       return "Feedback engine abhi configure nahi — VITE_SUPABASE_* env set karo.";
     case "FILE_TOO_LARGE":
       return "Recording 50MB se chhoti honi chahiye.";
+    case "RECORDING_TOO_LONG":
+      return "Max 3 min — recording auto-stop / dubara chhota clip bhejo.";
     case "NotAllowedError":
     case "PermissionDeniedError":
       return "Permission cancel / block — mic ya screen share allow karo.";
@@ -36,6 +43,14 @@ export default function FeedbackMicFab() {
   const recorderRef = useRef<{ stop: () => Promise<Blob> } | null>(null);
   const startedAt = useRef(0);
   const slowHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const maxDurTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const clearMaxDurTimer = () => {
+    if (maxDurTimer.current) {
+      clearTimeout(maxDurTimer.current);
+      maxDurTimer.current = null;
+    }
+  };
 
   const clearSlowTimer = () => {
     if (slowHintTimer.current) {
@@ -48,6 +63,7 @@ export default function FeedbackMicFab() {
   useEffect(() => {
     return () => {
       clearSlowTimer();
+      clearMaxDurTimer();
       sessionRef.current?.stopAll();
     };
   }, []);
@@ -62,6 +78,7 @@ export default function FeedbackMicFab() {
     }
     setPhase("uploading");
     clearSlowTimer();
+    clearMaxDurTimer();
     slowHintTimer.current = setTimeout(() => setShowSlowUploadHint(true), 1000);
 
     const duration_ms = Math.max(0, Date.now() - startedAt.current);
@@ -74,6 +91,13 @@ export default function FeedbackMicFab() {
       sessionRef.current?.stopAll();
       sessionRef.current = null;
       setToast(humanErr("RECORDER_ERROR"));
+      setPhase("error");
+      clearSlowTimer();
+      return;
+    }
+
+    if (duration_ms > MAX_FEEDBACK_DURATION_MS) {
+      setToast(humanErr("RECORDING_TOO_LONG"));
       setPhase("error");
       clearSlowTimer();
       return;
@@ -134,6 +158,10 @@ export default function FeedbackMicFab() {
       recorderRef.current = beginMediaRecorderCapture(sess.stream, mime);
       startedAt.current = Date.now();
       setPhase("recording");
+      clearMaxDurTimer();
+      maxDurTimer.current = setTimeout(() => {
+        void stopRecording();
+      }, MAX_FEEDBACK_DURATION_MS);
     } catch (e) {
       const name = e instanceof Error ? e.name : "";
       const code = e instanceof Error ? e.message : "";
@@ -143,7 +171,7 @@ export default function FeedbackMicFab() {
       sessionRef.current = null;
       setTimeout(() => setPhase("idle"), 4000);
     }
-  }, []);
+  }, [stopRecording]);
 
   const onFabClick = () => {
     if (phase === "recording") {

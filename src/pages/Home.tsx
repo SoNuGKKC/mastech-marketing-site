@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import TrustBadge from "../components/TrustBadge";
+import BookDemoSection from "../components/BookDemoSection";
 import FounderNote from "../components/FounderNote";
 import HeroVideoPlayer from "../components/HeroVideoPlayer";
 
@@ -71,6 +72,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <BookDemoSection />
 
       <FounderNote />
 

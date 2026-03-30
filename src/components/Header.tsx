@@ -71,6 +71,9 @@ export default function Header() {
           <NavLink to="/contact" className={({ isActive }) => `${nav} ${isActive ? active : ""}`}>
             Contact
           </NavLink>
+          <NavLink to="/login" className={({ isActive }) => `${nav} ${isActive ? active : ""}`}>
+            Portal
+          </NavLink>
         </nav>
         <div className="hidden sm:block">
           <TrustBadge />

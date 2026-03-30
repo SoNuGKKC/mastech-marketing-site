@@ -12,6 +12,10 @@ interface ImportMetaEnv {
   readonly VITE_SUPABASE_ANON_KEY?: string;
   /** Dev only: set "false" to hide Feedback FAB. */
   readonly VITE_SHOW_FEEDBACK_FAB?: string;
+  /** Jadu: Paradise field app URL (default paradise-app.netlify.app). */
+  readonly VITE_JADU_PARADISE_FIELD_URL?: string;
+  /** Jadu: Paradise MIS admin URL (default mis-admin.netlify.app). */
+  readonly VITE_JADU_PARADISE_ADMIN_URL?: string;
 }
 
 interface ImportMeta {
