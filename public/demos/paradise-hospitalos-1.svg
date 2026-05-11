@@ -1,0 +1,72 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="0" x2="1040" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#05070B"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#FF8A2A"/>
+      <stop offset="1" stop-color="#FCD34D"/>
+    </linearGradient>
+    <filter id="shadow" x="-30" y="-30" width="1260" height="810" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="750" rx="28" fill="url(#bg)"/>
+  <circle cx="1040" cy="140" r="260" fill="#00B8FF" fill-opacity="0.10"/>
+  <circle cx="210" cy="110" r="210" fill="#FF8A2A" fill-opacity="0.10"/>
+  <rect x="60" y="60" width="1080" height="630" rx="26" fill="url(#glass)" stroke="#FFFFFF" stroke-opacity="0.12" filter="url(#shadow)"/>
+
+  <!-- Top bar -->
+  <rect x="84" y="84" width="1032" height="58" rx="18" fill="#0B0F18" fill-opacity="0.55" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <rect x="104" y="102" width="156" height="22" rx="11" fill="url(#accent)" fill-opacity="0.95"/>
+  <rect x="280" y="104" width="108" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.10"/>
+  <rect x="402" y="104" width="90" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="1000" y="102" width="96" height="22" rx="11" fill="#00B8FF" fill-opacity="0.15" stroke="#00B8FF" stroke-opacity="0.25"/>
+
+  <!-- Sidebar -->
+  <rect x="84" y="160" width="252" height="510" rx="22" fill="#0B0F18" fill-opacity="0.40" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <rect x="108" y="190" width="190" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.10"/>
+  <rect x="108" y="222" width="210" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.07"/>
+  <rect x="108" y="254" width="178" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.07"/>
+  <rect x="108" y="286" width="196" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.07"/>
+  <rect x="108" y="330" width="210" height="42" rx="16" fill="#FF8A2A" fill-opacity="0.14" stroke="#FF8A2A" stroke-opacity="0.25"/>
+  <rect x="126" y="344" width="140" height="14" rx="7" fill="#FF8A2A" fill-opacity="0.70"/>
+
+  <!-- Main cards -->
+  <rect x="360" y="160" width="756" height="160" rx="24" fill="#0B0F18" fill-opacity="0.40" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <text x="396" y="208" fill="#FFFFFF" fill-opacity="0.92" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="26" font-weight="800">
+    Hospital OS  Dashboard
+  </text>
+  <text x="396" y="242" fill="#FFFFFF" fill-opacity="0.62" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="16" font-weight="600">
+    OPD " Patients " Pharmacy " Billing " Alerts
+  </text>
+  <rect x="396" y="264" width="168" height="36" rx="14" fill="#00B8FF" fill-opacity="0.14" stroke="#00B8FF" stroke-opacity="0.25"/>
+  <text x="420" y="287" fill="#BAE6FD" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="13" font-weight="800" letter-spacing="0.08em">
+    LIVE WORKFLOW
+  </text>
+
+  <rect x="360" y="344" width="368" height="326" rx="24" fill="#0B0F18" fill-opacity="0.40" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <rect x="388" y="372" width="248" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.10"/>
+  <rect x="388" y="408" width="312" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="388" y="432" width="296" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="388" y="456" width="270" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.06"/>
+  <rect x="388" y="500" width="160" height="36" rx="14" fill="url(#accent)" fill-opacity="0.95"/>
+  <text x="414" y="523" fill="#05070B" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="13" font-weight="900" letter-spacing="0.06em">
+    ADD PATIENT
+  </text>
+
+  <rect x="748" y="344" width="368" height="326" rx="24" fill="#0B0F18" fill-opacity="0.40" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <rect x="776" y="372" width="238" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.10"/>
+  <rect x="776" y="410" width="312" height="20" rx="10" fill="#FF8A2A" fill-opacity="0.12" stroke="#FF8A2A" stroke-opacity="0.22"/>
+  <rect x="776" y="442" width="312" height="20" rx="10" fill="#00B8FF" fill-opacity="0.10" stroke="#00B8FF" stroke-opacity="0.20"/>
+  <rect x="776" y="474" width="312" height="20" rx="10" fill="#10B981" fill-opacity="0.10" stroke="#10B981" stroke-opacity="0.20"/>
+  <text x="796" y="563" fill="#FFFFFF" fill-opacity="0.55" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="12" font-weight="700">
+    Demo screenshot (placeholder)  replace with real Paradise UI exports.
+  </text>
+</svg>

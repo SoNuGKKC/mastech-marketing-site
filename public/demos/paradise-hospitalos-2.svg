@@ -1,0 +1,66 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#05070B"/>
+      <stop offset="1" stop-color="#071225"/>
+    </linearGradient>
+    <linearGradient id="glass2" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#00B8FF"/>
+      <stop offset="1" stop-color="#FF8A2A"/>
+    </linearGradient>
+    <filter id="shadow2" x="-30" y="-30" width="1260" height="810" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="750" rx="28" fill="url(#bg2)"/>
+  <circle cx="240" cy="640" r="260" fill="#FF8A2A" fill-opacity="0.08"/>
+  <circle cx="1040" cy="620" r="320" fill="#00B8FF" fill-opacity="0.08"/>
+
+  <rect x="60" y="60" width="1080" height="630" rx="26" fill="url(#glass2)" stroke="#FFFFFF" stroke-opacity="0.12" filter="url(#shadow2)"/>
+
+  <!-- Header -->
+  <rect x="84" y="84" width="1032" height="58" rx="18" fill="#0B0F18" fill-opacity="0.55" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <text x="110" y="122" fill="#FFFFFF" fill-opacity="0.90" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="18" font-weight="800">
+    Pharmacy / Billing
+  </text>
+  <rect x="930" y="102" width="186" height="22" rx="11" fill="url(#accent2)" fill-opacity="0.22" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <text x="952" y="118" fill="#FFFFFF" fill-opacity="0.72" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="12" font-weight="800" letter-spacing="0.08em">
+    SMART SEARCH
+  </text>
+
+  <!-- Table -->
+  <rect x="84" y="160" width="1032" height="510" rx="22" fill="#0B0F18" fill-opacity="0.40" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <rect x="110" y="190" width="220" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.10"/>
+  <rect x="350" y="190" width="140" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="510" y="190" width="140" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="670" y="190" width="140" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+  <rect x="830" y="190" width="260" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.08"/>
+
+  <!-- Rows -->
+  <g opacity="0.95">
+    <rect x="110" y="228" width="980" height="48" rx="16" fill="#FFFFFF" fill-opacity="0.04"/>
+    <rect x="110" y="284" width="980" height="48" rx="16" fill="#FFFFFF" fill-opacity="0.03"/>
+    <rect x="110" y="340" width="980" height="48" rx="16" fill="#FFFFFF" fill-opacity="0.04"/>
+    <rect x="110" y="396" width="980" height="48" rx="16" fill="#FFFFFF" fill-opacity="0.03"/>
+    <rect x="110" y="452" width="980" height="48" rx="16" fill="#FFFFFF" fill-opacity="0.04"/>
+    <rect x="110" y="508" width="980" height="48" rx="16" fill="#FFFFFF" fill-opacity="0.03"/>
+  </g>
+
+  <!-- Right summary card -->
+  <rect x="820" y="556" width="270" height="92" rx="20" fill="url(#accent2)" fill-opacity="0.12" stroke="#FFFFFF" stroke-opacity="0.10"/>
+  <text x="846" y="592" fill="#FFFFFF" fill-opacity="0.85" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="13" font-weight="900" letter-spacing="0.08em">
+    TOTAL
+  </text>
+  <text x="846" y="624" fill="#FFFFFF" fill-opacity="0.92" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="24" font-weight="900">
+    � 12,480
+  </text>
+
+  <text x="110" y="650" fill="#FFFFFF" fill-opacity="0.55" font-family="ui-sans-serif, system-ui, Segoe UI, Arial" font-size="12" font-weight="700">
+    Demo screenshot (placeholder)  replace with real Paradise demo exports.
+  </text>
+</svg>

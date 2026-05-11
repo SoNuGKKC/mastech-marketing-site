@@ -15,10 +15,19 @@ export default {
           gold: "#d4b86a",
           goldMuted: "#c6a24a",
         },
+        adrine: {
+          base: "#0f172a",
+          base2: "#020617",
+          gold: "#F59E0B",
+          green: "#22c55e",
+        },
       },
       fontFamily: {
+        cinzel: ['"Cinzel"', "serif"],
+        cormorant: ['"Cormorant Garamond"', "serif"],
         playfair: ['"Playfair Display"', "Georgia", "Times New Roman", "serif"],
         sans: [
+          "Inter",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
