@@ -1,127 +1,63 @@
-/* Google Fonts — Cinzel (brand) + Playfair Display (GURJAR heritage) */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap');
-
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
-/* ── MAS TECH Brand Tokens ── */
 :root {
   --mas-bg: #04080e;
   --mas-primary: #ff8a2a;
   --mas-accent: #38bdf8;
-  --mas-enterprise-blue: #0c4a6e;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(1000px 560px at 8% -8%, rgba(56, 189, 248, 0.14) 0%, transparent 58%),
-    radial-gradient(820px 480px at 100% 0%, rgba(255, 138, 42, 0.12) 0%, transparent 52%),
+    radial-gradient(1000px 560px at 8% -8%, rgba(56,189,248,0.14) 0%, transparent 58%),
+    radial-gradient(820px 480px at 100% 0%, rgba(255,138,42,0.12) 0%, transparent 52%),
     radial-gradient(700px 500px at 50% 110%, rgba(255,215,0,0.05) 0%, transparent 55%),
-    radial-gradient(600px 400px at 50% 100%, rgba(12, 74, 110, 0.35) 0%, transparent 55%),
     var(--mas-bg);
   color: #f9fafb;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-    "Noto Sans", sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
-/* ── Utility font classes (used in JSX) ── */
-.font-cinzel {
-  font-family: "Cinzel", serif;
-}
-
-.font-playfair {
-  font-family: "Playfair Display", serif;
-}
-
-.font-cormorant {
-  font-family: "Cormorant Garamond", serif;
-}
-
-/* ── Glass panels ── */
 .glass-panel {
   @apply rounded-2xl border border-white/10 bg-mas-card/80 backdrop-blur-md shadow-mas;
 }
-
 .glass-xl {
   @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-mas;
 }
 
-/* ── Animated hero background ── */
 @keyframes mas-float-bg {
-  0%   { transform: translate3d(0, 0, 0); }
-  50%  { transform: translate3d(0, -10px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
+  0%,100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-10px,0); }
 }
+.mas-hero-anim { animation: mas-float-bg 10s ease-in-out infinite; }
 
-.mas-hero-anim {
-  animation: mas-float-bg 10s ease-in-out infinite;
-}
-
-/* ── Text gradient (primary orange to amber) ── */
 .text-gradient {
   @apply bg-gradient-to-r from-mas-primary to-amber-200 bg-clip-text text-transparent;
 }
 
-/* ── Gold hero tagline glow ── */
 .mas-hero-tagline {
-  text-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.95),
-    0 2px 12px rgba(0, 0, 0, 0.85),
-    0 0 40px rgba(255, 215, 0, 0.35),
-    0 0 80px rgba(255, 180, 60, 0.2);
+  text-shadow: 0 4px 24px rgba(0,0,0,0.95), 0 0 40px rgba(255,215,0,0.35), 0 0 80px rgba(255,180,60,0.2);
 }
 
-/* ── Gold "YOU ASK" text gradient ── */
 .mas-hero-ask {
-  background: linear-gradient(180deg, #fffef5 0%, #ffd700 42%, #daa520 72%, #8b6914 100%);
+  background: linear-gradient(180deg,#fffef5 0%,#ffd700 42%,#daa520 72%,#8b6914 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.55)) drop-shadow(0 0 48px rgba(255, 200, 80, 0.3))
-    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.9));
+  filter: drop-shadow(0 0 20px rgba(255,215,0,0.55)) drop-shadow(0 4px 16px rgba(0,0,0,0.9));
 }
 
-.mas-hero-automate {
-  text-shadow:
-    0 4px 28px rgba(0, 0, 0, 0.95),
-    0 2px 14px rgba(0, 0, 0, 0.9),
-    0 0 32px rgba(255, 255, 255, 0.12);
-}
-
-@supports not ((-webkit-background-clip: text) or (background-clip: text)) {
-  .mas-hero-ask {
-    color: #ffd700;
-    -webkit-text-fill-color: #ffd700;
-    filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.6)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.85));
-  }
-}
-
-/* ── Feedback pulse (existing) ── */
 @keyframes feedback-pulse-shell {
-  0%,  100% { transform: scale(1);     box-shadow: 0 0 40px rgba(239, 68, 68, 0.35); }
-  50%        { transform: scale(1.012); box-shadow: 0 0 56px rgba(239, 68, 68, 0.55); }
+  0%,100% { transform:scale(1); box-shadow:0 0 40px rgba(239,68,68,0.35); }
+  50% { transform:scale(1.012); box-shadow:0 0 56px rgba(239,68,68,0.55); }
 }
+.feedback-pulse-shell { animation: feedback-pulse-shell 1.8s ease-in-out infinite; }
 
-.feedback-pulse-shell {
-  animation: feedback-pulse-shell 1.8s ease-in-out infinite;
-}
-
-/* ── Tailwind button transitions ── */
-button,
-a[role="button"],
-input[type="submit"] {
-  transition:
-    color 0.2s ease,
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease,
-    filter 0.2s ease;
+button, a[role="button"], input[type="submit"] {
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .15s ease, filter .2s ease;
 }
