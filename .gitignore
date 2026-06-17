@@ -8,3 +8,11 @@ dist/
 .DS_Store
 .vercel
 .netlify/
+
+# Duplicate / orphan branding files — keep originals, ignore these
+public/branding/gurjar-sonu12.jpeg
+public/branding/manthan-gurjar12.jpeg
+public/branding/FOUNDER_PHOTO.md
+public/branding/Mas_Tech _Solution_01.mp4
+public/branding/Scene 1 — Cold open.mp4
+PROJECT_LOG.json

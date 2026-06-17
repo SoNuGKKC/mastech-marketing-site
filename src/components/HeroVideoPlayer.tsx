@@ -1,17 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 /**
- * Hero playlist — add files under public/branding/ as:
- * mas-tech-solution-01.mp4 … mas-tech-solution-06.mp4
+ * Hero playlist — only videos that exist in public/branding/.
  * No poster (avoids static image flash before decode).
  */
 export const HERO_VIDEO_SRCS = [
   "/branding/mas-tech-solution-01.mp4",
   "/branding/mas-tech-solution-02.mp4",
-  "/branding/mas-tech-solution-03.mp4",
-  "/branding/mas-tech-solution-04.mp4",
-  "/branding/mas-tech-solution-05.mp4",
-  "/branding/mas-tech-solution-06.mp4",
+  "/branding/mas-tech-overview-hero.mp4",
 ] as const;
 
 export default function HeroVideoPlayer() {

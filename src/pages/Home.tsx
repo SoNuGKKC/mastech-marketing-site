@@ -4,7 +4,8 @@ import BookDemoSection from "../components/BookDemoSection";
 import FounderNote from "../components/FounderNote";
 import { motion } from "framer-motion";
 
-const wh = String(import.meta.env.VITE_WHATSAPP_LINK || "").trim() || "https://wa.me/?text=" + encodeURIComponent("Hi MAS TECH, I want a demo for AI Software Solutions. Please share next steps.");
+// ⚠️ Set VITE_WHATSAPP_LINK in Netlify env vars with your real WhatsApp number
+const wh = String(import.meta.env.VITE_WHATSAPP_LINK || "").trim() || "https://wa.me/919998887776?text=Hi%20MAS%20TECH%2C%20I%20want%20a%20demo";
 
 function TrishulDivider() {
   return (
