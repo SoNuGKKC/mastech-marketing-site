@@ -40,7 +40,7 @@ export default function BookDemoSection() {
   }
 
   return (
-    <section className="border-y border-amber-400/10 bg-gradient-to-b from-[#070d18] via-[#0a1628] to-mas-bg py-16 md:py-20">
+    <section id="book-demo" className="border-y border-amber-400/10 bg-gradient-to-b from-[#070d18] via-[#0a1628] to-mas-bg py-16 md:py-20">
       <div className="mx-auto max-w-6xl px-4">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
