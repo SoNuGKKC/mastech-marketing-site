@@ -41,18 +41,18 @@ export default function FounderNote() {
               {/* Sonu */}
               <div className="relative flex-1 overflow-hidden rounded-xl border border-[#ffd700]/35" style={{ aspectRatio:"3/4" }}>
                 {!sonuErr ? (
-                  <img src="/branding/sonu.jpeg" alt="Gurjar Sonu, Founder MAS TECH" className="h-full w-full object-cover object-center" onError={() => setSonuErr(true)}/>
+                  <img src="/branding/gurjar-sonu12.jpeg" alt="Gurjar Sonu, Founder MAS TECH" className="h-full w-full object-cover object-center" onError={() => setSonuErr(true)}/>
                 ) : (
-                  <div className="flex h-full items-center justify-center bg-mas-card p-4 text-center text-xs text-mas-muted">Add photo:<br/><code className="text-[#ffd700]">public/branding/sonu.jpeg</code></div>
+                  <div className="flex h-full items-center justify-center bg-mas-card p-4 text-center text-xs text-mas-muted">Add photo:<br/><code className="text-[#ffd700]">public/branding/gurjar-sonu12.jpeg</code></div>
                 )}
                 <p className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 to-transparent px-2 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-[#ffd700]/95">Sonu Gurjar</p>
               </div>
               {/* Manthan */}
               <div className="relative flex-1 overflow-hidden rounded-xl border border-[#ffd700]/35" style={{ aspectRatio:"3/4" }}>
                 {!manthanErr ? (
-                  <img src="/branding/manthan-gurjar.jpeg" alt="Manthan Gurjar" className="h-full w-full object-cover object-center" onError={() => setManthanErr(true)}/>
+                  <img src="/branding/manthan-gurjar12.jpeg" alt="Manthan Gurjar" className="h-full w-full object-cover object-center" onError={() => setManthanErr(true)}/>
                 ) : (
-                  <div className="flex h-full items-center justify-center bg-mas-card p-4 text-center text-xs text-mas-muted">Add photo:<br/><code className="text-[#ffd700]">public/branding/manthan-gurjar.jpeg</code></div>
+                  <div className="flex h-full items-center justify-center bg-mas-card p-4 text-center text-xs text-mas-muted">Add photo:<br/><code className="text-[#ffd700]">public/branding/manthan-gurjar12.jpeg</code></div>
                 )}
                 <p className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/85 to-transparent px-2 py-2 text-center text-[10px] font-bold uppercase tracking-wider text-[#ffd700]/95">Manthan Gurjar</p>
               </div>
