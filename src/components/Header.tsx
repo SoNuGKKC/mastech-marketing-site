@@ -1,8 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import TrustBadge from "./TrustBadge";
-
-const navCls = "rounded-lg px-3 py-2 text-sm font-semibold text-mas-muted transition hover:text-white";
-const activeCls = "bg-white/10 text-white";
 
 function TrishulSeal({ className = "" }: { className?: string }) {
   return (
@@ -10,12 +6,11 @@ function TrishulSeal({ className = "" }: { className?: string }) {
       <defs>
         <linearGradient id="tgH" x1="10" y1="2" x2="46" y2="78" gradientUnits="userSpaceOnUse">
           <stop stopColor="#fff8e7"/>
-          <stop offset="0.32" stopColor="#e6c66a"/>
-          <stop offset="0.65" stopColor="#c9a227"/>
-          <stop offset="1" stopColor="#4a3d12"/>
+          <stop offset="0.35" stopColor="#D4A843"/>
+          <stop offset="1" stopColor="#7a5a10"/>
         </linearGradient>
         <filter id="tgGH" x="-80%" y="-80%" width="260%" height="260%">
-          <feGaussianBlur stdDeviation="1.35" result="blur"/>
+          <feGaussianBlur stdDeviation="1.2" result="blur"/>
           <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
         </filter>
       </defs>
@@ -28,41 +23,45 @@ function TrishulSeal({ className = "" }: { className?: string }) {
   );
 }
 
+const navLink = "text-sm text-white/50 hover:text-white transition-colors px-3 py-2 rounded-lg hover:bg-white/5";
+const activeLink = "text-white bg-white/[0.08]";
+
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#ffd700]/8 bg-mas-bg/55 backdrop-blur-[10px] supports-[backdrop-filter]:bg-mas-bg/40">
-      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-3">
-        <Link to="/" className="flex min-w-0 items-center gap-3 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/55 focus-visible:ring-offset-2 focus-visible:ring-offset-mas-bg">
-          <span className="relative shrink-0" style={{ filter:"drop-shadow(0 0 8px rgba(255,215,0,0.75)) drop-shadow(0 0 20px rgba(255,200,60,0.45))" }} aria-hidden>
-            <TrishulSeal className="h-[52px] w-auto sm:h-[60px]"/>
+    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#07080f]/90 backdrop-blur-[12px]">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-3">
+
+        {/* Brand */}
+        <Link to="/" className="flex items-center gap-3 shrink-0">
+          <span style={{ filter: "drop-shadow(0 0 8px rgba(212,168,67,0.6))" }}>
+            <TrishulSeal className="h-[44px] w-auto" />
           </span>
-          <div className="min-w-0 text-left">
-            <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <span className="bg-gradient-to-b from-[#fff9ed] via-[#ecd9a8] to-[#a88b2e] bg-clip-text text-[1.35rem] font-bold leading-none tracking-[0.14em] text-transparent drop-shadow-[0_0_14px_rgba(230,198,106,0.35)] sm:text-[1.55rem]" style={{ fontFamily:'"Cormorant Garamond","Cinzel",serif' }}>
-                GURJAR
-              </span>
-              <span className="hidden h-[1.1em] w-px bg-gradient-to-b from-transparent via-amber-300/90 to-transparent sm:inline-block" aria-hidden/>
-              <span className="text-xs font-semibold tracking-[0.2em] text-white/95 sm:text-sm" style={{ fontFamily:'"Cinzel",serif' }}>
-                MAS TECH
-              </span>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-bold tracking-[0.14em] text-[#D4A843] text-[15px]" style={{ fontFamily: '"Cinzel", serif' }}>GURJAR</span>
+              <span className="h-3 w-px bg-white/20"/>
+              <span className="text-[12px] font-semibold tracking-[0.12em] text-white/80" style={{ fontFamily: '"Cinzel", serif' }}>MAS TECH</span>
             </div>
-            <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/75" style={{ fontFamily:'"Cinzel",serif' }}>
-              You ASK. We AUTOMATE.
-            </div>
+            <div className="text-[9px] tracking-[0.14em] text-white/40 mt-0.5" style={{ fontFamily: '"Cinzel", serif' }}>YOU ASK. WE AUTOMATE.</div>
           </div>
         </Link>
 
-        <nav className="flex flex-wrap items-center gap-1">
-          <NavLink to="/" end className={({ isActive }) => `${navCls} ${isActive ? activeCls : ""}`}>Home</NavLink>
-          <NavLink to="/solutions" className={({ isActive }) => `${navCls} ${isActive ? activeCls : ""}`}>Solutions</NavLink>
-          <NavLink to="/about" className={({ isActive }) => `${navCls} ${isActive ? activeCls : ""}`}>About</NavLink>
-          <Link to="/#founders-note" className={navCls}>Founder</Link>
-          <NavLink to="/contact" className={({ isActive }) => `${navCls} ${isActive ? activeCls : ""}`}>Contact</NavLink>
-          <NavLink to="/login" className={({ isActive }) => `${navCls} ${isActive ? activeCls : ""}`}>Portal</NavLink>
+        {/* Nav */}
+        <nav className="hidden md:flex items-center gap-1">
+          <NavLink to="/solutions" className={({ isActive }) => `${navLink} ${isActive ? activeLink : ""}`}>Solutions</NavLink>
+          <NavLink to="/about" className={({ isActive }) => `${navLink} ${isActive ? activeLink : ""}`}>About</NavLink>
+          <NavLink to="/contact" className={({ isActive }) => `${navLink} ${isActive ? activeLink : ""}`}>Contact</NavLink>
         </nav>
-        <div className="hidden sm:block"><TrustBadge /></div>
+
+        {/* CTA */}
+        <a
+          href="#book-demo"
+          className="shrink-0 rounded-lg bg-[#D4A843] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.1em] text-[#07080f] hover:brightness-110 transition-all"
+          style={{ fontFamily: '"Cinzel", serif' }}
+        >
+          Book Demo
+        </a>
       </div>
-      <div className="border-t border-white/5 px-4 py-2 sm:hidden"><TrustBadge /></div>
     </header>
   );
 }
